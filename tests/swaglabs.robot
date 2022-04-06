@@ -23,4 +23,4 @@ Filter Products by Price
     And I login with "standard_user" user and "secret_sauce" password
     When I select "Price (low to high)"
     Then I should see product with price "7.99" in the first position
-    And I should see product with price "49.99" in the end of product list
+    # And I should see product with price "49.99" in the end of product list
