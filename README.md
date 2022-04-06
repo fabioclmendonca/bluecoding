@@ -9,6 +9,6 @@ Activate virtualenv
 
 Install requirements
   - pip install -r requirements.txt
-
+<!--  -->
 Run Project
   - robot tests/swaglabs.robot
