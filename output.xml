@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.12 on darwin)" generated="20220406 19:30:17.484" rpa="false" schemaversion="3">
+<suite id="s1" name="Swaglabs" source="/Users/fabiomendonca/projects/robot-test-env/tests/swaglabs.robot">
+<test id="s1-t1" name="Filter Products by Price" line="21">
+<kw name="Given I open &quot;http://www.saucedemo.com&quot; page" library="swaglabsSteps" sourcename="I open &quot;${url}&quot; page">
+<kw name="Open Browser" library="Browser">
+<arg>url=${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20220406 19:30:17.991" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220406 19:30:17.992" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Users/fabiomendonca/projects/robot-test-env/browser/traces/d850eddd-9898-43c7-a72d-04beec6ede81"}</msg>
+<msg timestamp="20220406 19:30:18.591" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Users/fabiomendonca/projects/robot-test-env/browser/traces/d850eddd-9898-43c7-a72d-04beec6ede81"}</msg>
+<msg timestamp="20220406 19:30:18.592" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220406 19:30:18.713" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220406 19:30:18.713" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<msg timestamp="20220406 19:30:19.687" level="INFO">Successfully initialized new page object and opened url: http://www.saucedemo.com</msg>
+<status status="PASS" starttime="20220406 19:30:17.991" endtime="20220406 19:30:19.687"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:17.991" endtime="20220406 19:30:19.687"/>
+</kw>
+<kw name="And I login with &quot;standard_user&quot; user and &quot;secret_sauce&quot; password" library="swaglabsSteps" sourcename="I login with &quot;${user}&quot; user and &quot;${password}&quot; password">
+<kw name="Input username" library="swaglabsLogin">
+<arg>${user}</arg>
+<kw name="Type Text" library="Browser">
+<arg>${username_input}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220406 19:30:19.688" level="INFO">Types the text 'standard_user' in the given field.</msg>
+<status status="PASS" starttime="20220406 19:30:19.688" endtime="20220406 19:30:19.758"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:19.688" endtime="20220406 19:30:19.758"/>
+</kw>
+<kw name="Input password" library="swaglabsLogin">
+<arg>${password}</arg>
+<kw name="Type Secret" library="Browser">
+<arg>${password_input}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<msg timestamp="20220406 19:30:19.759" level="WARN">Direct assignment of values as 'secret' is deprecated. Use special variable syntax to resolve variable. Example $var instead of ${var}.</msg>
+<status status="PASS" starttime="20220406 19:30:19.758" endtime="20220406 19:30:19.796"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:19.758" endtime="20220406 19:30:19.796"/>
+</kw>
+<kw name="Click on Login button" library="swaglabsLogin">
+<kw name="Click" library="Browser">
+<arg>${login_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220406 19:30:19.796" endtime="20220406 19:30:19.858"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:19.796" endtime="20220406 19:30:19.858"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:19.687" endtime="20220406 19:30:19.858"/>
+</kw>
+<kw name="When I select &quot;Price (low to high)&quot;" library="swaglabsSteps" sourcename="I select &quot;${option}&quot;">
+<kw name="Select Filter" library="userLoggedPage">
+<arg>${option}</arg>
+<kw name="Select Options By" library="Browser">
+<arg>${filter_select}</arg>
+<arg>text</arg>
+<arg>${option}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20220406 19:30:19.859" endtime="20220406 19:30:20.038"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:19.859" endtime="20220406 19:30:20.038"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:19.858" endtime="20220406 19:30:20.038"/>
+</kw>
+<kw name="Then I should see product with price &quot;7.99&quot; in the first position" library="swaglabsSteps" sourcename="I should see product with price &quot;${value}&quot; in the first position">
+<kw name="Item Should be Visible in First position" library="userLoggedPage">
+<arg>${value}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${first_item_div}//div[@class="inventory_item_price"][text()="${value}"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220406 19:30:20.043" level="INFO">Waited for Element with selector //div[@class="inventory_list"]/child::div[1]//div[@class="inventory_item_price"][text()="7.99"] at state visible</msg>
+<status status="PASS" starttime="20220406 19:30:20.039" endtime="20220406 19:30:20.043"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:20.038" endtime="20220406 19:30:20.043"/>
+</kw>
+<status status="PASS" starttime="20220406 19:30:20.038" endtime="20220406 19:30:20.044"/>
+</kw>
+<kw name="And I should see product with price &quot;49.99&quot; in the end of product list" library="swaglabsSteps" sourcename="I should see product with price &quot;${value}&quot; in the end of product list">
+<kw name="Item Should be Visible in Last position" library="userLoggedPage">
+<arg>${value}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${first_item_div}//div[@class="inventory_item_price"][text()="${value}"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220406 19:30:30.172" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220406 19:30:33.061" level="FAIL">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for selector "//div[@class="inventory_list"]/child::div[1]//div[@class="inventory_item_price"][text()="49.99"]" to be visible
+============================================================</msg>
+<status status="FAIL" starttime="20220406 19:30:20.044" endtime="20220406 19:30:33.065"/>
+</kw>
+<status status="FAIL" starttime="20220406 19:30:20.044" endtime="20220406 19:30:33.066"/>
+</kw>
+<status status="FAIL" starttime="20220406 19:30:20.044" endtime="20220406 19:30:33.066"/>
+</kw>
+<tag>run</tag>
+<status status="FAIL" starttime="20220406 19:30:17.989" endtime="20220406 19:30:33.067">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for selector "//div[@class="inventory_list"]/child::div[1]//div[@class="inventory_item_price"][text()="49.99"]" to be visible
+============================================================</status>
+</test>
+<status status="FAIL" starttime="20220406 19:30:17.484" endtime="20220406 19:30:33.148"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">run</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Swaglabs">Swaglabs</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220406 19:30:17.991" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220406 19:30:19.759" level="WARN">Direct assignment of values as 'secret' is deprecated. Use special variable syntax to resolve variable. Example $var instead of ${var}.</msg>
+</errors>
+</robot>
