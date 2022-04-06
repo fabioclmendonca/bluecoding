@@ -5,8 +5,7 @@ Resource  ../pages/cartPage.robot
 
 *** Keywords ***
 I open "${url}" page
-    Open Browser  url=${url}
-    # New Page  ${url}
+    New Page  ${url}
     
 I login with "${user}" user and "${password}" password
     Input username  ${user}
